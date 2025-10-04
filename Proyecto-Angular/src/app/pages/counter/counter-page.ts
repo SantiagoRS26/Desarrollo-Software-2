@@ -10,11 +10,7 @@ export class CounterPageComponent {
   contadorSignal = signal(0);
 
   constructor() {
-    setInterval(() => {
-      this.valorActual += 1;
-      this.contadorSignal.update((val) => val + 1);
-      console.log('Contador actualizado automáticamente.');
-    }, 1000);
+    // Constructor limpio - el contador solo se actualiza con los botones
   }
 
   incrementar(cantidad: number) {
