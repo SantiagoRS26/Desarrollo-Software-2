@@ -1,0 +1,31 @@
+<div class="counter-container">
+    <div class="counter-card">
+        <h1 class="title">🎯 Contador Incremental</h1>
+
+        <div class="counter-display">
+            <div class="display-box">
+                <p class="display-label">Valor Normal:</p>
+                <p class="display-value">{{ valorActual }}</p>
+            </div>
+            <div class="display-box signal-box">
+                <p class="display-label">Valor Signal:</p>
+                <p class="display-value">{{ contadorSignal() }}</p>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-increment" (click)="incrementar(1)">
+                <span class="btn-icon">➕</span>
+                <span>Incrementar</span>
+            </button>
+            <button class="btn btn-decrement" (click)="decrementar(1)">
+                <span class="btn-icon">➖</span>
+                <span>Decrementar</span>
+            </button>
+            <button class="btn btn-reset" (click)="reiniciar()">
+                <span class="btn-icon">🔄</span>
+                <span>Reiniciar</span>
+            </button>
+        </div>
+    </div>
+</div>

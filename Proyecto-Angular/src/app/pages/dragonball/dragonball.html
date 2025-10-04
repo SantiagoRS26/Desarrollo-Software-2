@@ -1,0 +1,50 @@
+<div class="dragonball-container">
+    <div class="header-section">
+        <h1 class="main-title">⚡ Dragon Ball Z - Gestión de Guerreros</h1>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="form-section">
+            <div class="form-card">
+                <h3 class="form-title">➕ Agregar Nuevo Guerrero</h3>
+
+                <div class="input-group">
+                    <label class="input-label">Nombre del Guerrero:</label>
+                    <input type="text" class="text-input" placeholder="Ingresa el nombre" [value]="nombrePersonaje()"
+                        (input)="nombrePersonaje.set(inputNombre.value)" #inputNombre />
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">Nivel de Poder:</label>
+                    <input type="number" class="number-input" placeholder="Ingresa el poder" [value]="nivelPoder()"
+                        (input)="nivelPoder.set(+inputPoder.value)" #inputPoder />
+                </div>
+
+                <button class="save-button" (click)="agregarPersonaje()">
+                    <span class="button-icon">💾</span>
+                    <span>Guardar Guerrero</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="list-section">
+            <div class="list-card">
+                <h3 class="list-title">📜 Lista de Guerreros Registrados</h3>
+
+                <ul class="characters-list">
+                    @for(personaje of listaPersonajes(); track personaje.id; let
+                    indice = $index){
+                    <li class="character-item">
+                        <span class="character-index">{{ indice + 1 }}.</span>
+                        <span class="character-name">{{ personaje.nombre }}</span>
+                        <span class="separator">→</span>
+                        <span [ngClass]="clasesPoder()" class="character-power">{{
+                            personaje.poder
+                            }}</span>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

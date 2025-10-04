@@ -1,0 +1,63 @@
+<div class="super-container">
+    <div class="hero-header">
+        <h1 class="hero-title">🌟 Dragon Ball Super - Edición Avanzada</h1>
+        <p class="hero-subtitle">
+            Sistema de registro de guerreros con componentes reutilizables
+        </p>
+    </div>
+
+    <div class="main-grid">
+        <div class="left-panel">
+            <div class="panel-card">
+                <div class="card-header">
+                    <h2 class="card-title">✨ Registrar Nuevo Guerrero</h2>
+                </div>
+
+                <div class="form-content">
+                    <div class="field-wrapper">
+                        <label class="field-label" for="nombreField">Nombre del Guerrero</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input id="nombreField" type="text" class="custom-input"
+                                placeholder="Ejemplo: Goku, Vegeta..." [value]="nombrePersonaje()"
+                                (input)="nombrePersonaje.set(inputNombre.value)" #inputNombre />
+                        </div>
+                    </div>
+
+                    <div class="field-wrapper">
+                        <label class="field-label" for="poderField">Nivel de Poder</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">⚡</span>
+                            <input id="poderField" type="number" class="custom-input" placeholder="Ejemplo: 9000"
+                                min="1" [value]="nivelPoder()" (input)="nivelPoder.set(+inputPoder.value)"
+                                #inputPoder />
+                        </div>
+                        <small class="field-hint">Debe ser un número mayor a 0</small>
+                    </div>
+
+                    <button class="submit-btn" (click)="agregarPersonaje()">
+                        <span class="btn-icon">➕</span>
+                        <span class="btn-label">Agregar al Equipo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="panel-card">
+                <div class="card-header card-header-success">
+                    <div class="header-content">
+                        <h2 class="card-title">📋 Equipo de Guerreros</h2>
+                        <span class="count-badge">{{
+                            listaPersonajes().length
+                            }}</span>
+                    </div>
+                </div>
+
+                <div class="list-content">
+                    <dragonball-character-list [characters]="listaPersonajes()" listName="Guerreros Z del Equipo" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

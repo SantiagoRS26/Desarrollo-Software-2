@@ -1,0 +1,40 @@
+<nav class="navigation-bar">
+    <div class="nav-container">
+        <div class="brand-section">
+            <a class="brand-link" href="#">
+                <span class="brand-icon">🐉</span>
+                <span class="brand-text">Angular Proyecto</span>
+            </a>
+        </div>
+
+        <div class="menu-section">
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a class="menu-link" routerLink="/" [routerLinkActive]="'active-link'"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        <span class="link-icon">🔢</span>
+                        <span class="link-text">Counter</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" [routerLink]="['/car']" [routerLinkActive]="'active-link'">
+                        <span class="link-icon">🚗</span>
+                        <span class="link-text">Car</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" [routerLink]="['/dragonball']" [routerLinkActive]="'active-link'">
+                        <span class="link-icon">⚡</span>
+                        <span class="link-text">DragonBall</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" [routerLink]="['/dragonball-super']" [routerLinkActive]="'active-link'">
+                        <span class="link-icon">🌟</span>
+                        <span class="link-text">DragonBall Super</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

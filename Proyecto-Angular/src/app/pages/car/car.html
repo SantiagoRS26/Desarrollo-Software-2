@@ -1,0 +1,95 @@
+<div class="car-page">
+    <div class="page-header">
+        <h1 class="page-title">🚗 Sistema de Gestión Vehicular</h1>
+        <p class="page-subtitle">Administración de información de vehículos</p>
+    </div>
+
+    <div class="content-grid">
+        <div class="info-section">
+            <div class="section-header">
+                <h2>📋 Datos del Vehículo</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label class="item-label">Marca:</label>
+                    <div class="item-value">{{ marca() }}</div>
+                </div>
+
+                <div class="info-item">
+                    <label class="item-label">Año:</label>
+                    <div class="item-value">{{ anio() }}</div>
+                </div>
+
+                <div class="info-item full-width">
+                    <label class="item-label">Descripción:</label>
+                    <div class="item-value highlight">{{ descripcionCompleta() }}</div>
+                </div>
+
+                <div class="info-item full-width">
+                    <label class="item-label">Propietario:</label>
+                    <div class="item-value">{{ estudiante() }}</div>
+                </div>
+            </div>
+
+            <div class="transformations-box">
+                <h3 class="box-title">🔄 Transformaciones de Texto</h3>
+                <div class="transform-grid">
+                    <div class="transform-item">
+                        <span class="transform-label">Método toUpperCase():</span>
+                        <span class="transform-result">{{
+                            estudiante().toUpperCase()
+                            }}</span>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-label">Pipe uppercase:</span>
+                        <span class="transform-result">{{
+                            estudiante() | uppercase
+                            }}</span>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-label">Computed capitalizado:</span>
+                        <span class="transform-result">{{
+                            estudianteFormateado()
+                            }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <div class="section-header">
+                <h2>⚙️ Acciones Disponibles</h2>
+            </div>
+
+            <div class="actions-container">
+                <button class="action-btn btn-primary" (click)="cambiarVehiculo()">
+                    <span class="btn-emoji">🔄</span>
+                    <span class="btn-text">Cambiar Vehículo</span>
+                </button>
+
+                <button class="action-btn btn-secondary" (click)="actualizarAnio()">
+                    <span class="btn-emoji">📅</span>
+                    <span class="btn-text">Actualizar Año</span>
+                </button>
+
+                <button class="action-btn btn-tertiary" (click)="restaurarDatos()">
+                    <span class="btn-emoji">↩️</span>
+                    <span class="btn-text">Restaurar</span>
+                </button>
+            </div>
+
+            <div class="status-badge">
+                <div class="badge" [class.badge-new]="anio() >= 2020"
+                    [class.badge-recent]="anio() >= 2015 && anio() < 2020" [class.badge-old]="anio() < 2015">
+                    @if(anio() >= 2020) {
+                    <span>⭐ Vehículo Nuevo</span>
+                    } @else if(anio() >= 2015) {
+                    <span>🕐 Vehículo Reciente</span>
+                    } @else {
+                    <span>📜 Vehículo Antiguo</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

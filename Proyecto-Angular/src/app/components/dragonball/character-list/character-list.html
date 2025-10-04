@@ -1,0 +1,16 @@
+<div class="list-wrapper">
+    <h3 class="list-heading">{{ listName() }}</h3>
+    <ul class="warrior-list">
+        @for(personaje of characters(); track personaje.id; let indice = $index){
+        <li class="warrior-item">
+            <span class="item-number">{{ indice + 1 }}:</span>
+            <span class="item-name">{{ personaje.nombre }}</span>
+            <span class="item-arrow">→</span>
+            <span class="item-power" [class.text-danger]="personaje.poder > 8000"
+                [class.text-info]="personaje.poder < 8000">
+                {{ personaje.poder }}
+            </span>
+        </li>
+        }
+    </ul>
+</div>

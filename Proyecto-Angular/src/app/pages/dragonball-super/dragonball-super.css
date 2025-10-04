@@ -1,0 +1,244 @@
+/* Página Dragon Ball Super */
+
+.super-container {
+  padding: var(--size-8) var(--size-5);
+  background: var(--color-background);
+}
+
+.hero-header {
+  text-align: center;
+  margin-bottom: var(--size-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-3);
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  color: var(--color-text);
+}
+
+.hero-subtitle {
+  color: var(--color-text-subtle);
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--size-6);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.panel-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-divider);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-divider);
+  padding: var(--size-4) var(--size-5);
+  color: var(--color-text);
+}
+
+.card-header-success {
+  background: rgba(47, 157, 105, 0.12);
+  border-bottom: 1px solid rgba(47, 157, 105, 0.3);
+  color: var(--color-success);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-3);
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 54px;
+  padding: var(--size-2) var(--size-3);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(47, 157, 105, 0.3);
+  color: var(--color-success);
+}
+
+.form-content,
+.list-content {
+  padding: var(--size-5);
+  display: grid;
+  gap: var(--size-4);
+}
+
+.field-wrapper {
+  display: grid;
+  gap: var(--size-2);
+}
+
+.field-label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  inset-inline-start: var(--size-4);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: var(--color-text-subtle);
+  pointer-events: none;
+}
+
+.custom-input {
+  width: 100%;
+  padding: var(--size-3) var(--size-4) var(--size-3) calc(var(--size-6));
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+}
+
+.custom-input:focus {
+  background: var(--color-surface-alt);
+}
+
+.field-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: var(--size-4) var(--size-5);
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary-strong);
+  box-shadow: var(--shadow-xs);
+}
+
+.submit-btn:hover {
+  background: var(--color-primary-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+}
+
+.list-wrapper {
+  display: grid;
+  gap: var(--size-4);
+}
+
+.list-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-divider);
+  padding-bottom: var(--size-2);
+}
+
+.warrior-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--size-2);
+}
+
+.warrior-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--size-3);
+  padding: var(--size-3) var(--size-4);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-divider);
+  background: var(--color-surface-alt);
+  transition: var(--transition-base);
+}
+
+.warrior-item:hover {
+  transform: translateY(-2px);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+  border-color: rgba(45, 77, 240, 0.25);
+}
+
+.item-number {
+  font-weight: 700;
+  color: var(--color-text-subtle);
+  min-width: 36px;
+}
+
+.item-name {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.item-arrow {
+  color: var(--color-text-subtle);
+}
+
+.item-power {
+  font-weight: 700;
+  color: var(--color-primary-strong);
+}
+
+.text-danger {
+  color: var(--color-danger);
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+@media (max-width: 1024px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .super-container {
+    padding: var(--size-7) var(--size-4);
+  }
+
+  .panel-card {
+    border-radius: var(--radius-md);
+  }
+
+  .warrior-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .item-number,
+  .item-arrow {
+    display: none;
+  }
+}
